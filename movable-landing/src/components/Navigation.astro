@@ -1,0 +1,57 @@
+---
+const navLinks = [
+  { href: "#product", label: "Product" },
+  { href: "#solutions", label: "Solutions" },
+  { href: "#industries", label: "Industries" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#team", label: "Team" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-tango to-tango-mid flex items-center justify-center transition-transform group-hover:scale-105">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </div>
+      <span class="text-xl font-bold font-heading text-white">Movable</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="text-white/70 hover:text-white transition-colors font-body text-sm tracking-wide"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- CTA Button -->
+    <a
+      href="#demo"
+      class="btn-movable btn-tango-outline px-6 py-2.5 text-sm hidden md:inline-block"
+    >
+      Request Demo
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-white p-2" aria-label="Open menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    background: linear-gradient(180deg, rgba(6, 6, 52, 0.95) 0%, rgba(6, 6, 52, 0.8) 100%);
+    backdrop-filter: blur(12px);
+  }
+</style>

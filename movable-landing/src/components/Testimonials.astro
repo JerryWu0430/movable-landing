@@ -1,0 +1,81 @@
+---
+const testimonials = [
+  {
+    quote: "I need a view from six people instantly when a crisis hits. Movable coordinates that view immediately.",
+    initial: "S",
+    role: "Supply Chain Director",
+    company: "Major Telco",
+    color: "tango",
+  },
+  {
+    quote: "Every parcel can make the network smarter if we can capture that data.",
+    initial: "O",
+    role: "Operations Leader",
+    company: "Last Mile Logistics",
+    color: "aqua",
+  },
+  {
+    quote: "I need to know why the metrics are red without driving to 20 different sites.",
+    initial: "C",
+    role: "COO",
+    company: "High-Volume Retail",
+    color: "lime",
+  },
+  {
+    quote: "We need to transfer knowledge by voice because it's faster and clearer.",
+    initial: "I",
+    role: "Industrial Director",
+    company: "Manufacturing",
+    color: "tango",
+  },
+];
+---
+
+<section id="testimonials" class="py-24 px-6 relative overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-deep-blue-mid/10 to-transparent"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">
+        Validated by Operational Leaders.
+      </h2>
+      <p class="text-xl text-white/60 max-w-3xl mx-auto">
+        Hear from the operations teams who rely on Movable Voice to capture the ground truth.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {testimonials.map((testimonial, index) => (
+        <div
+          class="group card-glass rounded-2xl p-6 hover:border-aqua/20 transition-all duration-300"
+          style={`animation-delay: ${index * 100}ms;`}
+        >
+          <!-- Quote -->
+          <blockquote class="text-lg text-white/90 italic leading-relaxed mb-6">
+            "{testimonial.quote}"
+          </blockquote>
+
+          <!-- Author -->
+          <div class="flex items-center gap-4">
+            <div class={`w-12 h-12 rounded-full bg-${testimonial.color}/20 flex items-center justify-center`}>
+              <span class={`text-${testimonial.color} font-heading font-bold text-lg`}>
+                {testimonial.initial}
+              </span>
+            </div>
+            <div>
+              <div class="font-heading font-medium text-white">
+                {testimonial.role}
+              </div>
+              <div class="text-sm text-white/50">
+                {testimonial.company}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

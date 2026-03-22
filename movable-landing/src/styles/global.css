@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* Movable Brand Colors */
+@theme {
+  --color-deep-blue: #060634;
+  --color-deep-blue-mid: #38385d;
+  --color-tango: #ff4220;
+  --color-tango-mid: #ff684d;
+  --color-tango-light: #ff8e79;
+  --color-lime: #e7fe00;
+  --color-lime-mid: #f0fe66;
+  --color-aqua: #4addff;
+  --color-aqua-mid: #92ebff;
+  --color-grey: #e5e5e5;
+  --color-grey-mid: #efefef;
+  --color-grey-light: #f5f5f5;
+
+  /* Font Families */
+  --font-heading: 'Figtree', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  background-color: var(--color-deep-blue);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Gradient Definitions */
+.gradient-dark-energy {
+  background: linear-gradient(180deg, #4addff 0%, #ff4220 50%, #060634 100%);
+}
+
+.gradient-night-depth {
+  background: linear-gradient(180deg, #060634 0%, #4addff 100%);
+}
+
+.gradient-sunrise {
+  background: linear-gradient(180deg, #ff4220 0%, #ffffff 50%, #e7fe00 100%);
+}
+
+/* Movable Button Shape */
+.btn-movable {
+  border-radius: 50px 4px 50px 4px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-movable:hover {
+  transform: translateY(-2px);
+}
+
+.btn-movable:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Tango outline button */
+.btn-tango-outline {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-deep-blue), var(--color-deep-blue)) padding-box,
+    linear-gradient(135deg, var(--color-tango) 0%, rgba(255,66,32,0.3) 100%) border-box;
+  color: white;
+}
+
+.btn-tango-outline:hover {
+  background:
+    linear-gradient(var(--color-deep-blue-mid), var(--color-deep-blue-mid)) padding-box,
+    linear-gradient(135deg, var(--color-tango) 0%, var(--color-tango-mid) 100%) border-box;
+}
+
+/* Tango filled button */
+.btn-tango-filled {
+  background: linear-gradient(135deg, var(--color-tango) 0%, var(--color-tango-mid) 100%);
+  color: white;
+  border: none;
+}
+
+.btn-tango-filled:hover {
+  background: linear-gradient(135deg, var(--color-tango-mid) 0%, var(--color-tango) 100%);
+}
+
+/* Card styles */
+.card-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Highlight text */
+.text-gradient-tango {
+  background: linear-gradient(135deg, var(--color-tango) 0%, var(--color-tango-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 221, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(74, 221, 255, 0.6); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

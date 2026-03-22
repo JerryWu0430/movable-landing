@@ -1,0 +1,82 @@
+---
+const industries = [
+  {
+    title: "Logistics & Last Mile",
+    subtitle: "Dark Data Capture",
+    description: "Capture the operational insights that never make it to your TMS. Every failed delivery is a learning opportunity.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>`,
+  },
+  {
+    title: "Manufacturing",
+    subtitle: "Shop Floor Interface",
+    description: "Bridge the gap between production metrics and floor-level reality. Understand delays before they cascade.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>`,
+  },
+  {
+    title: "High-Volume Retail",
+    subtitle: "Audit & Compliance Velocity",
+    description: "Scale your store oversight without adding headcount. Get consistent, structured feedback from every location.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`,
+  },
+  {
+    title: "Complex Supply Chain",
+    subtitle: "Crisis Swarm",
+    description: "When metrics turn red, instantly coordinate perspectives from multiple stakeholders. Get the full picture fast.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>`,
+  },
+  {
+    title: "Infrastructure & Projects",
+    subtitle: "Dependency Orchestration",
+    description: "Understand cross-trade dependencies in real-time. Know why crews are waiting before they file reports.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+  },
+  {
+    title: "Commercial Property",
+    subtitle: "Site Readiness",
+    description: "Verify site conditions without site visits. Get structured updates from on-ground personnel instantly.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`,
+  },
+];
+---
+
+<section id="industries" class="py-24 px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">
+        Built for Complex Operations.
+      </h2>
+      <p class="text-xl text-white/60 max-w-3xl mx-auto">
+        Movable Voice adapts to your operational context, delivering intelligence where you need it most.
+      </p>
+    </div>
+
+    <!-- Industries Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {industries.map((industry, index) => (
+        <div
+          class="group card-glass rounded-2xl p-6 hover:border-aqua/30 transition-all duration-300 hover:-translate-y-1"
+          style={`animation-delay: ${index * 100}ms;`}
+        >
+          <!-- Icon -->
+          <div class="text-aqua mb-4 opacity-60 group-hover:opacity-100 transition-opacity" set:html={industry.icon} />
+
+          <!-- Title -->
+          <h3 class="text-xl font-heading font-bold mb-1 text-white group-hover:text-aqua transition-colors">
+            {industry.title}
+          </h3>
+
+          <!-- Subtitle -->
+          <div class="text-sm text-tango font-medium mb-3">
+            {industry.subtitle}
+          </div>
+
+          <!-- Description -->
+          <p class="text-white/60 text-sm leading-relaxed">
+            {industry.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

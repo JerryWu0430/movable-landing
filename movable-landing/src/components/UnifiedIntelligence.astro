@@ -1,0 +1,106 @@
+---
+const dataPoints = [
+  { source: "Procurement", message: "Vendor marked 5k units delivered 48hrs ago.", color: "tango" },
+  { source: "Logistics", message: "Not scanned yet. Dock is bottlenecked.", color: "aqua" },
+  { source: "Warehouse", message: "Shipment missing / Not scanned.", color: "lime" },
+  { source: "Field Ops", message: "Locked out of secondary site. Need code.", color: "tango" },
+];
+---
+
+<section class="py-24 px-6 relative overflow-hidden">
+  <!-- Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-deep-blue via-deep-blue-mid/10 to-deep-blue"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">
+        From Scattered Data to Unified Intelligence
+      </h2>
+      <p class="text-xl text-white/60 max-w-3xl mx-auto">
+        See how your AI transforms fragmented information into actionable insights
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-6 items-start">
+      <!-- Scattered Data Points -->
+      <div class="lg:col-span-2 space-y-4">
+        {dataPoints.map((point, index) => (
+          <div
+            class={`card-glass rounded-xl p-4 border-l-2 border-l-${point.color}`}
+            style={`animation-delay: ${index * 100}ms;`}
+          >
+            <div class={`text-xs font-medium text-${point.color} uppercase tracking-wider mb-1`}>
+              {point.source}
+            </div>
+            <p class="text-white/80 text-sm italic">"{point.message}"</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Arrow/Connection -->
+      <div class="hidden lg:flex items-center justify-center">
+        <div class="relative">
+          <div class="w-16 h-0.5 bg-gradient-to-r from-aqua to-tango"></div>
+          <svg class="w-6 h-6 text-tango absolute -right-3 -top-2.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mobile Arrow -->
+      <div class="lg:hidden flex justify-center py-4">
+        <svg class="w-8 h-8 text-tango rotate-90" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+
+      <!-- Movable Synthesis -->
+      <div class="lg:col-span-2">
+        <div class="card-glass rounded-2xl p-6 border border-tango/30">
+          <!-- Header -->
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-tango to-tango-mid flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-heading font-bold text-white">Movable</div>
+              <div class="text-xs text-aqua">Alert</div>
+            </div>
+          </div>
+
+          <!-- Alert Title -->
+          <div class="bg-tango/10 rounded-lg px-4 py-2 mb-4">
+            <span class="text-sm font-medium text-tango">Executive Pulse: Logistics Blocker</span>
+          </div>
+
+          <!-- Synthesis -->
+          <div class="space-y-4">
+            <div>
+              <div class="text-xs text-white/40 uppercase tracking-wider mb-1">Synthesis</div>
+              <p class="text-white/90 text-sm leading-relaxed">
+                Inventory Discrepancy Detected. Procurement data conflicts with physical warehouse checks. Field teams are currently stalled.
+              </p>
+            </div>
+
+            <div>
+              <div class="text-xs text-white/40 uppercase tracking-wider mb-1">Impact</div>
+              <p class="text-white/70 text-sm leading-relaxed">
+                Production delays estimated at 4-6 hours. Three teams awaiting resolution. Rollout schedule at risk. Idle labor costs are compounding daily. Sales lift targets in jeopardy.
+              </p>
+            </div>
+
+            <div class="pt-2 border-t border-white/10">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-lime animate-pulse"></div>
+                <span class="text-sm font-medium text-lime">Key Action: Reconcile Warehouse Data</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

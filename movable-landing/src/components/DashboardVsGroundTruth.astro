@@ -1,0 +1,73 @@
+---
+const comparisons = [
+  {
+    industry: "Manufacturing",
+    dashboardView: "Yield Variance: -12%",
+    groundTruth: "Pressure valve on Line 3 sticks after 4 hours. Maintenance required.",
+    color: "tango",
+  },
+  {
+    industry: "Supply Chain",
+    dashboardView: "Port Disruption Alert",
+    groundTruth: "Legal reviewing force majeure. Ops rerouting to Rotterdam.",
+    color: "aqua",
+  },
+  {
+    industry: "Commercial Property",
+    dashboardView: "Move-In Status: Flagged",
+    groundTruth: "HVAC parts missing for Floor 4. Tenant access blocked.",
+    color: "lime",
+  },
+];
+---
+
+<section id="solutions" class="py-24 px-6 relative overflow-hidden">
+  <!-- Background accent -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-tango/5 to-transparent"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">
+        From Red Flags to Operational Reality.
+      </h2>
+      <p class="text-xl text-white/60 max-w-3xl mx-auto">
+        See the difference between surface-level metrics and the operational intelligence that drives real action.
+      </p>
+    </div>
+
+    <!-- Comparison Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {comparisons.map((item, index) => (
+        <div
+          class="group"
+          style={`animation-delay: ${index * 150}ms;`}
+        >
+          <!-- Industry Label -->
+          <div class={`text-sm font-medium text-${item.color} uppercase tracking-wider mb-4`}>
+            {item.industry}
+          </div>
+
+          <!-- Dashboard View Card -->
+          <div class="card-glass rounded-2xl p-6 mb-4 border-l-4 border-l-tango/50">
+            <div class="text-xs text-white/40 uppercase tracking-wider mb-2">The Dashboard View</div>
+            <div class="text-lg font-heading font-bold text-white/80">
+              {item.dashboardView}
+            </div>
+          </div>
+
+          <!-- Ground Truth Card -->
+          <div class="card-glass rounded-2xl p-6 border-l-4 border-l-aqua group-hover:border-l-lime transition-colors">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-aqua animate-pulse"></div>
+              <span class="text-xs text-aqua uppercase tracking-wider">The Ground Truth</span>
+            </div>
+            <p class="text-white/90 italic leading-relaxed">
+              "{item.groundTruth}"
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
