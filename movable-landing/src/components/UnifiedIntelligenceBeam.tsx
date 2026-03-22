@@ -125,7 +125,7 @@ export function UnifiedIntelligenceBeam() {
   }
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-deep-blue via-deep-blue-mid/10 to-deep-blue"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">

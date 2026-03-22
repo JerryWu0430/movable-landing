@@ -58,7 +58,7 @@ const getColorClasses = (color: string) => {
 
 const SlidingTestimonial = () => {
   return (
-    <section id="testimonials" className="py-24 overflow-hidden">
+    <section id="testimonials" className="py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">
