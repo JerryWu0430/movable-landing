@@ -1,4 +1,5 @@
 ---
+import { HeroAnimation } from './HeroAnimation';
 ---
 
 <section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
@@ -39,40 +40,8 @@
         </div>
       </div>
 
-      <!-- Right Content - Ground Truth Card -->
-      <div class="relative">
-        <div class="card-glass rounded-3xl p-6 space-y-4 max-w-md mx-auto lg:ml-auto">
-          <!-- Status Header -->
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-medium text-aqua uppercase tracking-wider">Infrastructure</span>
-            <span class="px-3 py-1 rounded-full bg-tango/20 text-tango text-xs font-medium">At Risk</span>
-          </div>
-
-          <div class="text-white/60 text-sm">Site Progress: At Risk</div>
-          <div class="text-white/40 text-xs">09:30 — Zone B</div>
-
-          <!-- Ground Truth Box -->
-          <div class="bg-deep-blue/50 rounded-xl p-4 border border-aqua/20 mt-4">
-            <div class="flex items-center gap-2 mb-2">
-              <div class="w-2 h-2 rounded-full bg-aqua animate-pulse"></div>
-              <span class="text-xs font-medium text-aqua uppercase tracking-wider">Ground Truth</span>
-            </div>
-            <p class="text-white/90 text-sm leading-relaxed italic">
-              "Electricians waiting on scaffolders to clear Zone B."
-            </p>
-          </div>
-
-          <div class="flex items-center gap-2 pt-2">
-            <svg class="w-4 h-4 text-lime" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-xs text-white/60">Verified • 2 min ago</span>
-          </div>
-        </div>
-
-        <!-- Decorative Element -->
-        <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full border border-aqua/20 animate-pulse-glow"></div>
-      </div>
+      <!-- Right Content - Animated Flow -->
+      <HeroAnimation client:load />
     </div>
   </div>
 </section>
