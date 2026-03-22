@@ -129,3 +129,17 @@ h1, h2, h3, h4, h5, h6 {
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Sliding testimonial animation */
+@keyframes x-slider {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+.animate-x-slider {
+  animation: x-slider 30s linear infinite;
+}

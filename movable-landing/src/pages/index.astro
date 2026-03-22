@@ -7,7 +7,7 @@ import HowItWorks from '../components/HowItWorks.astro';
 import DashboardVsGroundTruth from '../components/DashboardVsGroundTruth.astro';
 import UnifiedIntelligence from '../components/UnifiedIntelligence.astro';
 import Industries from '../components/Industries.astro';
-import Testimonials from '../components/Testimonials.astro';
+import SlidingTestimonial from '../components/ui/sliding-testimonial';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -21,7 +21,7 @@ import Footer from '../components/Footer.astro';
 		<DashboardVsGroundTruth />
 		<UnifiedIntelligence />
 		<Industries />
-		<Testimonials />
+		<SlidingTestimonial client:visible />
 		<CTA />
 	</main>
 	<Footer />
