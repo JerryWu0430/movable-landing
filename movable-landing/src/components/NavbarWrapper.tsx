@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/resizable-navbar";
 
 const navItems = [
-  { name: "Product", link: "#product" },
-  { name: "Solutions", link: "#solutions" },
-  { name: "Industries", link: "#industries" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Product", link: "/#product" },
+  { name: "Solutions", link: "/#solutions" },
+  { name: "Industries", link: "/#industries" },
+  { name: "Testimonials", link: "/#testimonials" },
 ];
 
 export function NavbarWrapper() {
@@ -31,7 +31,7 @@ export function NavbarWrapper() {
           className="text-white/70 hover:text-white"
         />
         <NavbarButton
-          href="#demo"
+          href="/#demo"
           variant="gradient"
           className="bg-gradient-to-r from-tango to-tango-mid text-white border-none"
         >
@@ -65,7 +65,7 @@ export function NavbarWrapper() {
             </a>
           ))}
           <NavbarButton
-            href="#demo"
+            href="/#demo"
             variant="gradient"
             className="w-full bg-gradient-to-r from-tango to-tango-mid text-white border-none mt-4"
           >

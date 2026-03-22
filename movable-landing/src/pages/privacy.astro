@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { NavbarWrapper } from '../components/NavbarWrapper';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy | Movable Voice">
+	<NavbarWrapper client:load />
+	<main class="pt-32 pb-20 px-6">
+		<div class="max-w-4xl mx-auto">
+			<h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white">Privacy Policy</h1>
+			<p class="text-white/60 mb-12">Last Updated: January 4, 2026</p>
+
+			<div class="prose prose-invert prose-lg max-w-none space-y-8">
+				<!-- Section 1 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">1. Introduction</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						Movable Voice ("we," "us," or "our"), a Delaware Corporation, provides an API-first voice interface platform for operational teams. We are committed to protecting your privacy and complying with applicable data protection laws, including the GDPR, UK GDPR, and CCPA.
+					</p>
+					<p class="text-white/80 leading-relaxed mb-4">
+						This Privacy Policy explains how we collect, use, and share information when you:
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2 mb-4">
+						<li>Visit our website at movablevoice.com (the "Website").</li>
+						<li>Use our voice agent services, API, and platform (the "Services").</li>
+					</ul>
+					<p class="text-white/60 italic">
+						Note: This Policy does not apply to job applicants or current employees of Movable Voice.
+					</p>
+				</section>
+
+				<!-- Section 2 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">2. Our Role: Controller vs. Processor</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						To understand how we handle your data, it is important to distinguish between two roles:
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li><strong class="text-white">For Website Visitors:</strong> We act as the Data Controller. This means we decide how your personal data (like your name when you request a demo) is used.</li>
+						<li><strong class="text-white">For Service Users (Enterprise Clients & Employees):</strong> We generally act as the Data Processor. Our Client (the company you work for) is the Data Controller. We process your data solely on the instructions of the Client and in accordance with our Data Processing Agreement (DPA). However, regarding specific service improvements described in Section 4, we may act as a Controller for limited legitimate business purposes.</li>
+					</ul>
+				</section>
+
+				<!-- Section 3 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">3. Information We Collect</h2>
+
+					<h3 class="text-xl font-heading font-bold text-aqua mb-3">A. Information You Provide to Us (Website)</h3>
+					<p class="text-white/80 leading-relaxed mb-4">
+						When you request a demo or contact us via the Website, we collect:
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2 mb-6">
+						<li><strong class="text-white">Contact Information:</strong> Name, business email address, phone number.</li>
+						<li><strong class="text-white">Professional Information:</strong> Job title, company name, and industry.</li>
+					</ul>
+
+					<h3 class="text-xl font-heading font-bold text-aqua mb-3">B. Information Processed via the Services</h3>
+					<p class="text-white/80 leading-relaxed mb-4">
+						When an Enterprise Client uses Movable Voice to interact with their employees or contractors ("Authorized Users"), we process the following data:
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li><strong class="text-white">Voice Data:</strong> Real-time audio of the phone call or voice interaction.</li>
+						<li><strong class="text-white">Transcripts:</strong> Text-based records of the conversation.</li>
+						<li><strong class="text-white">Identity Data:</strong> Name, phone number, and role of the employee being called.</li>
+						<li><strong class="text-white">Operational Data:</strong> Information provided during the call (e.g., gate codes, shift status, site readiness).</li>
+						<li><strong class="text-white">Location Data:</strong> GPS or location data if required by the specific workflow.</li>
+					</ul>
+				</section>
+
+				<!-- Section 4 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">4. Service Analysis & Improvement</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						We use proprietary and third-party Artificial Intelligence (AI) technologies to provide our Services. Unlike standard processors, we may process specific data points to ensure the reliability and accuracy of our platform.
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li><strong class="text-white">Service Improvement:</strong> We use aggregated and anonymized data to analyze Service performance and identify improvements, in accordance with our legitimate business interests. This allows us to refine our understanding of operational contexts without compromising the privacy of individual users.</li>
+						<li><strong class="text-white">No Storage of Raw Audio:</strong> We do not retain raw audio files indefinitely. Audio is streamed for processing and deleted after the completion of relevant evaluations and necessary quality assurance steps.</li>
+						<li><strong class="text-white">Transcript Retention:</strong> We retain text transcripts to facilitate the Service and improve model performance, strictly in accordance with the Data Processing Agreement (DPA) signed with the Enterprise Client.</li>
+					</ul>
+				</section>
+
+				<!-- Section 5 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">5. Sub-Processors & Data Sharing</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						To provide the Services, we share data with the following third-party sub-processors. We have entered into strict data processing agreements with each vendor.
+					</p>
+
+					<div class="overflow-x-auto mb-4">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="border-b border-white/20">
+									<th class="text-left py-3 px-4 text-white font-heading font-bold">Provider</th>
+									<th class="text-left py-3 px-4 text-white font-heading font-bold">Purpose</th>
+									<th class="text-left py-3 px-4 text-white font-heading font-bold">Location</th>
+								</tr>
+							</thead>
+							<tbody class="text-white/80">
+								<tr class="border-b border-white/10">
+									<td class="py-3 px-4">AWS (Amazon Web Services)</td>
+									<td class="py-3 px-4">Cloud Hosting & Infrastructure</td>
+									<td class="py-3 px-4">US & UK</td>
+								</tr>
+								<tr class="border-b border-white/10">
+									<td class="py-3 px-4">ElevenLabs</td>
+									<td class="py-3 px-4">Voice Synthesis (Text-to-Speech)</td>
+									<td class="py-3 px-4">US & UK</td>
+								</tr>
+								<tr class="border-b border-white/10">
+									<td class="py-3 px-4">OpenAI</td>
+									<td class="py-3 px-4">Large Language Model (Processing)</td>
+									<td class="py-3 px-4">US & UK</td>
+								</tr>
+								<tr class="border-b border-white/10">
+									<td class="py-3 px-4">Google (Gemini)</td>
+									<td class="py-3 px-4">Large Language Model (Processing)</td>
+									<td class="py-3 px-4">US & UK</td>
+								</tr>
+								<tr class="border-b border-white/10">
+									<td class="py-3 px-4">Anthropic</td>
+									<td class="py-3 px-4">Large Language Model (Processing)</td>
+									<td class="py-3 px-4">US & UK</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<p class="text-white/80 leading-relaxed">
+						We do not sell your personal data to advertisers or other third parties.
+					</p>
+				</section>
+
+				<!-- Section 6 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">6. International Data Transfers</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						Movable Voice is a Delaware C-Corp with infrastructure hosted in the United States and the United Kingdom.
+					</p>
+					<p class="text-white/80 leading-relaxed mb-4">
+						If you are accessing the Services from the European Economic Area (EEA), your data may be transferred to the US or UK. We ensure these transfers comply with GDPR utilizing:
+					</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li>Standard Contractual Clauses (SCCs).</li>
+						<li>Adequacy decisions where applicable (e.g., UK-US Data Bridge).</li>
+					</ul>
+				</section>
+
+				<!-- Section 7 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">7. Data Retention</h2>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li><strong class="text-white">Website Data:</strong> We keep marketing data until you unsubscribe or request deletion.</li>
+						<li><strong class="text-white">Service Data:</strong> We retain operational data and transcripts for the duration specified in the agreement with our Enterprise Client or as needed for the legitimate business purposes described in Section 4, after which data is deleted or anonymized.</li>
+					</ul>
+				</section>
+
+				<!-- Section 8 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">8. Your Rights</h2>
+
+					<h3 class="text-xl font-heading font-bold text-aqua mb-3">For Employees (Authorized Users)</h3>
+					<p class="text-white/80 leading-relaxed mb-6">
+						If you use Movable Voice through your employer and wish to access, correct, or delete your data, please contact your employer directly. As a Processor, we typically process these requests under the direction of the Client.
+					</p>
+
+					<h3 class="text-xl font-heading font-bold text-aqua mb-3">For Website Visitors</h3>
+					<p class="text-white/80 leading-relaxed mb-4">You have the right to:</p>
+					<ul class="list-disc list-inside text-white/80 space-y-2">
+						<li>Access the personal data we hold about you.</li>
+						<li>Request correction or deletion of your data.</li>
+						<li>Withdraw consent for marketing communications.</li>
+					</ul>
+				</section>
+
+				<!-- Section 9 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">9. Security</h2>
+					<p class="text-white/80 leading-relaxed">
+						We implement industry-standard technical and organizational measures to protect your data, including encryption of data in transit (TLS 1.2+) and at rest. Access to production data is strictly limited to authorized engineering staff for maintenance and security purposes only.
+					</p>
+				</section>
+
+				<!-- Section 10 -->
+				<section>
+					<h2 class="text-2xl font-heading font-bold text-white mb-4">10. Contact Us</h2>
+					<p class="text-white/80 leading-relaxed mb-4">
+						If you have any questions about this Privacy Policy or our data practices, please contact our Data Protection Officer (DPO):
+					</p>
+
+					<div class="card-glass rounded-xl p-6 space-y-3">
+						<p class="text-white"><strong>Data Protection Officer:</strong> Yan Zhang</p>
+						<p class="text-white"><strong>Email:</strong> <a href="mailto:dpo@movablevoice.com" class="text-aqua hover:text-aqua/80 transition-colors">dpo@movablevoice.com</a></p>
+						<div class="pt-3 border-t border-white/10">
+							<p class="text-white font-medium mb-2">Company Address:</p>
+							<p class="text-white/80">Movable Voice Inc.</p>
+							<p class="text-white/80">131 Continental Dr, Suite 305</p>
+							<p class="text-white/80">Newark, DE 19713</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
