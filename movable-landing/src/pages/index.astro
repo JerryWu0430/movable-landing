@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+import { NavbarWrapper } from '../components/NavbarWrapper';
 import Hero from '../components/Hero.astro';
 import QuoteSection from '../components/QuoteSection.astro';
 import HowItWorks from '../components/HowItWorks.astro';
@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Movable Voice | Voice AI for Operational Intelligence">
-	<Navigation />
+	<NavbarWrapper client:load />
 	<main>
 		<Hero />
 		<QuoteSection />
