@@ -81,7 +81,7 @@ function NavbarLogo() {
   return (
     <a
       href="/"
-      className="relative z-20 flex items-center gap-3 px-2 py-1"
+      className="relative z-20 flex items-center gap-3 px-2 py-1 mr-8"
     >
       <img
         src="/assets/LOGO/SVGs/Movable_Logo_2026_Primary White.svg"
