@@ -45,7 +45,12 @@ const testimonials = [
   },
 ];
 
-const duplicatedTestimonials = [...testimonials, ...testimonials];
+// Split into two rows
+const row1 = testimonials.slice(0, 3);
+const row2 = testimonials.slice(3, 6);
+
+const duplicatedRow1 = [...row1, ...row1, ...row1, ...row1];
+const duplicatedRow2 = [...row2, ...row2, ...row2, ...row2];
 
 const getColorClasses = (color: string) => {
   const colors: Record<string, { bg: string; text: string }> = {
@@ -54,6 +59,36 @@ const getColorClasses = (color: string) => {
     lime: { bg: "bg-lime/20", text: "text-lime" },
   };
   return colors[color] || colors.tango;
+};
+
+const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
+  const colorClasses = getColorClasses(testimonial.color);
+  return (
+    <div className="border border-white/10 flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl shrink-0 grow-0 w-[350px] md:w-[420px] h-full hover:border-white/20 transition-colors">
+      <p className="px-5 py-5 text-pretty text-base md:text-lg font-light text-white/90 leading-relaxed">
+        &quot;{testimonial.description}&quot;
+      </p>
+      <div className="border-t border-white/10 w-full flex gap-1 overflow-hidden mt-auto">
+        <div className="flex-1 flex gap-3 items-center px-5 py-3">
+          <div
+            className={`w-9 h-9 rounded-full ${colorClasses.bg} flex items-center justify-center shrink-0`}
+          >
+            <span className={`${colorClasses.text} font-heading font-bold text-xs`}>
+              {testimonial.avatar}
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <h5 className="text-sm font-medium text-white">
+              {testimonial.name}
+            </h5>
+            <p className="text-white/50 text-xs">
+              {testimonial.profession}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const SlidingTestimonial = () => {
@@ -69,46 +104,35 @@ const SlidingTestimonial = () => {
           </p>
         </div>
 
-        <div
-          style={{
-            maskImage:
-              "linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%)",
-          }}
-          className="flex relative overflow-hidden"
-        >
-          <div className="flex animate-x-slider gap-5 w-max">
-            {duplicatedTestimonials.map((testimonial, idx) => {
-              const colorClasses = getColorClasses(testimonial.color);
-              return (
-                <div
-                  key={idx}
-                  className="border border-white/10 flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl shrink-0 grow-0 w-[400px] md:w-[500px] h-full hover:border-white/20 transition-colors"
-                >
-                  <p className="px-6 py-6 text-pretty text-lg md:text-xl font-light text-white/90 leading-relaxed">
-                    &quot;{testimonial.description}&quot;
-                  </p>
-                  <div className="border-t border-white/10 w-full flex gap-1 overflow-hidden mt-auto">
-                    <div className="flex-1 flex gap-3 items-center px-6 py-4">
-                      <div
-                        className={`w-10 h-10 rounded-full ${colorClasses.bg} flex items-center justify-center shrink-0`}
-                      >
-                        <span className={`${colorClasses.text} font-heading font-bold text-sm`}>
-                          {testimonial.avatar}
-                        </span>
-                      </div>
-                      <div className="flex flex-col">
-                        <h5 className="text-base font-medium text-white">
-                          {testimonial.name}
-                        </h5>
-                        <p className="text-white/50 text-sm">
-                          {testimonial.profession}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+        <div className="space-y-5">
+          {/* Row 1 - slides left */}
+          <div
+            style={{
+              maskImage:
+                "linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%)",
+            }}
+            className="flex relative overflow-hidden"
+          >
+            <div className="flex animate-x-slider gap-5 w-max">
+              {duplicatedRow1.map((testimonial, idx) => (
+                <TestimonialCard key={`row1-${idx}`} testimonial={testimonial} />
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 - slides right */}
+          <div
+            style={{
+              maskImage:
+                "linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%)",
+            }}
+            className="flex relative overflow-hidden"
+          >
+            <div className="flex animate-x-slider-reverse gap-5 w-max">
+              {duplicatedRow2.map((testimonial, idx) => (
+                <TestimonialCard key={`row2-${idx}`} testimonial={testimonial} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

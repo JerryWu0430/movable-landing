@@ -143,3 +143,16 @@ h1, h2, h3, h4, h5, h6 {
 .animate-x-slider {
   animation: x-slider 30s linear infinite;
 }
+
+@keyframes x-slider-reverse {
+  0% {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-x-slider-reverse {
+  animation: x-slider-reverse 30s linear infinite;
+}
