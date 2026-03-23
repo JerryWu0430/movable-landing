@@ -73,9 +73,9 @@ export function HeroAnimation() {
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto lg:ml-auto">
+    <div className="relative w-full max-w-lg mx-auto lg:ml-auto">
       {/* Alert Cards Stack */}
-      <div className="relative h-[280px] mb-6">
+      <div className="relative h-[340px] mb-8">
         <AnimatePresence mode="wait">
           {phase === "alert" && (
             <motion.div
@@ -86,22 +86,22 @@ export function HeroAnimation() {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="absolute inset-0"
             >
-              <div className="card-glass rounded-2xl p-5 border border-white/10">
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-xs font-medium uppercase tracking-wider text-${currentAlert.color}`}>
+              <div className="card-glass rounded-2xl p-6 border border-white/10">
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`text-sm font-medium uppercase tracking-wider text-${currentAlert.color}`}>
                     {currentAlert.type}
                   </span>
-                  <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${getStatusColor(currentAlert.color)}`}>
+                  <span className={`px-3 py-1.5 rounded-full text-sm font-medium ${getStatusColor(currentAlert.color)}`}>
                     {currentAlert.status}
                   </span>
                 </div>
-                <p className="text-white/80 text-sm mb-4">"{currentAlert.message}"</p>
+                <p className="text-white/80 text-base mb-5">"{currentAlert.message}"</p>
 
                 {/* Incoming call indicator */}
-                <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-tango/20 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-tango" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <div className="w-12 h-12 rounded-full bg-tango/20 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-tango" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                       </svg>
                     </div>
@@ -112,8 +112,8 @@ export function HeroAnimation() {
                     />
                   </div>
                   <div>
-                    <div className="text-xs text-white/60">Calling Movable...</div>
-                    <div className="text-sm text-white font-medium">Get ground truth</div>
+                    <div className="text-sm text-white/60">Calling Movable...</div>
+                    <div className="text-base text-white font-medium">Get ground truth</div>
                   </div>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export function HeroAnimation() {
             >
               <div className="text-center">
                 {/* Voice interaction animation */}
-                <div className="relative w-24 h-24 mx-auto mb-4">
+                <div className="relative w-32 h-32 mx-auto mb-6">
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -141,23 +141,23 @@ export function HeroAnimation() {
                   <motion.div
                     animate={{ scale: [1, 1.4, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                    className="absolute inset-2 rounded-full bg-tango/10 border border-tango/30"
+                    className="absolute inset-3 rounded-full bg-tango/10 border border-tango/30"
                   />
-                  <div className="absolute inset-4 rounded-full bg-gradient-to-br from-tango to-tango-mid flex items-center justify-center">
+                  <div className="absolute inset-6 rounded-full bg-gradient-to-br from-tango to-tango-mid flex items-center justify-center">
                     <img
                       src="/assets/LOGO/SVGs/Movable_Logo_2026_Logomark White.svg"
                       alt="Movable"
-                      className="w-8 h-8"
+                      className="w-10 h-10"
                     />
                   </div>
                 </div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="space-y-1"
+                  className="space-y-2"
                 >
-                  <p className="text-white font-medium">Movable Voice</p>
-                  <p className="text-white/60 text-sm">Gathering ground truth...</p>
+                  <p className="text-white font-medium text-lg">Movable Voice</p>
+                  <p className="text-white/60 text-base">Gathering ground truth...</p>
                 </motion.div>
               </div>
             </motion.div>
