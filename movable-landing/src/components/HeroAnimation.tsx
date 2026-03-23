@@ -172,30 +172,30 @@ export function HeroAnimation() {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="absolute inset-0"
             >
-              <div className="card-glass rounded-2xl p-5 border border-lime/30">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-                  <span className="text-xs font-medium text-lime uppercase tracking-wider">
+              <div className="card-glass rounded-2xl p-6 border border-lime/30">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-lime animate-pulse" />
+                  <span className="text-sm font-medium text-lime uppercase tracking-wider">
                     Ground Truth Captured
                   </span>
                 </div>
 
-                <div className="bg-deep-blue/50 rounded-xl p-4 border border-aqua/20 mb-4">
-                  <p className="text-white/90 text-sm leading-relaxed italic">
+                <div className="bg-deep-blue/50 rounded-xl p-5 border border-aqua/20 mb-5">
+                  <p className="text-white/90 text-base leading-relaxed italic">
                     "{currentTruth.truth}"
                   </p>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-lime" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-lime" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
-                    <span className="text-xs text-white/60">Verified • Just now</span>
+                    <span className="text-sm text-white/60">Verified • Just now</span>
                   </div>
-                  <div className="pt-2 border-t border-white/10">
+                  <div className="pt-3 border-t border-white/10">
                     <span className="text-xs text-white/40 uppercase tracking-wider">Recommended Action</span>
-                    <p className="text-sm text-aqua mt-1">{currentTruth.action}</p>
+                    <p className="text-base text-aqua mt-1">{currentTruth.action}</p>
                   </div>
                 </div>
               </div>
